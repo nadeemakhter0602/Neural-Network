@@ -13,6 +13,12 @@ class LeakyReLUTests(unittest.TestCase):
         expected = np.array([-0.9, -0.3, 0.0, 2.0])
         self.testing.assert_array_almost_equal(expected, result)
 
+    def test_leakyrelu_with_alpha(self):
+        layer = LeakyReLU(alpha=0.1)
+        result = layer.forward(np.array([-3.0, -1.0, 0.0, 2.0]))
+        expected = np.array([-0.3, -0.1, 0.0, 2.0])
+        self.testing.assert_array_almost_equal(expected, result)
+
 
 if __name__ == '__main__':
     unittest.main()
