@@ -25,6 +25,12 @@ class LeakyReLUTests(unittest.TestCase):
         expected = np.array([-3.0, -1.0, 0.0, 2.0])
         self.testing.assert_array_equal(expected, result)
 
+    def test_relu_with_threshold(self):
+        layer = ReLU(threshold=1.5)
+        result = layer.forward(np.array([-3.0, -1.0, 0.0, 2.0]))
+        expected = np.array([0.0, 0.0, 0.0, 2.0])
+        self.testing.assert_array_equal(expected, result)
+
 
 if __name__ == '__main__':
     unittest.main()
