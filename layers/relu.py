@@ -20,18 +20,3 @@ class ReLU():
         else:
             inputs[inputs < 0] = 0.0
         return inputs
-
-
-if __name__ == '__main__':
-    relu = ReLU()
-    outputs = relu.forward(np.array([-3.0, -1.0, 0.0, 2.0]))
-    print(outputs)  # [0.0, 0.0, 0.0, 2.0]
-    relu = ReLU(max_value=1.0)
-    outputs = relu.forward(np.array([-3.0, -1.0, 0.0, 2.0]))
-    print(outputs)  # [0.0, 0.0, 0.0, 1.0]
-    relu = ReLU(negative_slope=1.0)
-    outputs = relu.forward(np.array([-3.0, -1.0, 0.0, 2.0]))
-    print(outputs)  # [-3.0, -1.0, 0.0, 2.0]
-    relu = ReLU(threshold=1.5)
-    outputs = relu.forward(np.array([-3.0, -1.0, 1.0, 2.0]))
-    print(outputs)  # [0.0, 0.0, 0.0, 2.0]
