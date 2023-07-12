@@ -3,7 +3,7 @@ import numpy as np
 from relu import ReLU
 
 
-class LeakyReLUTests(unittest.TestCase):
+class ReLUTests(unittest.TestCase):
     def setUp(self):
         self.testing = np.testing
 
