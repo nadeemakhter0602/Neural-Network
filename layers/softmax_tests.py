@@ -7,7 +7,7 @@ class SoftmaxTests(unittest.TestCase):
     def setUp(self):
         self.testing = np.testing
 
-    def test_relu(self):
+    def test_softmax(self):
         layer = Softmax()
         result = layer.forward(np.array([1., 2., 1.]))
         expected = np.array([0.21194156, 0.57611688, 0.21194156])
